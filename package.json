@@ -1,0 +1,29 @@
+{
+    "name": "react-native-tip",
+    "version": "0.0.1",
+    "description": "React Native tip utility",
+    "main": "src/index.js",
+    "types": "src/index.d.ts",
+    "repository": "https://github.com/MaiconGilton/react-native-tip.git",
+    "keywords": [
+        "react-native",
+        "message",
+        "alert",
+        "popup",
+        "tip",
+        "help"
+    ],
+    "author": "Maicon Gilton <maicongilton@gmail.com>",
+    "license": "MIT",
+    "files": [
+        "src"
+    ],
+    "peerDependencies": {
+        "react": "*",
+        "react-native": "*"
+    },
+    "devDependencies": {
+        "react": "16.8.3",
+        "react-native": "0.59.8"
+    }
+}

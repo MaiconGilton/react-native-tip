@@ -1,0 +1,17 @@
+{
+    "githubUrl": "https://github.com/MaiconGilton/react-native-tip.git",
+    "npmPkg": "react-native-tip",
+    "examples": [
+        "https://github.com/MaiconGilton/react-native-tip/blob/master/src/examples.js"
+    ],
+    "images": [
+        "react-native-tip.gif"
+    ],
+    "ios": false,
+    "android": false,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+}
