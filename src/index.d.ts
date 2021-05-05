@@ -20,7 +20,7 @@ export interface ITipStep {
     /**
      * Timeout before triggering the tip change to next or previous one. 
      *
-     * Default = 10
+     * Default = 0
      * 
      * Useful to wait for some other async task finish like navigating between screens.
      * Use it with `prevAction()` or `nextAction()` methods.
@@ -54,7 +54,7 @@ export interface ITip {
      */
     body?: string;
     /**
-    * Style of the tip component: `<Tip style={style}>`.
+    * Style of the item wrapper component: `<Tip style={style}>`.
     */
     style?: ViewStyle;
     /**
@@ -78,7 +78,6 @@ export interface ITip {
     overlayOpacity?: number;
     /**
      * Your component to be rendered.
-     * OBS: Your component should not be a touchable button
      */
     children?: React.Component;
     /**
@@ -100,11 +99,15 @@ export interface ITip {
      */
     dismissable?: boolean;
     /**
-     * Adjust arrow y position.
+     * If true the item becomes pressable and shows the tip automatically when pressed.
+     * 
+     * OBS: if the item is already a pressable component, you should show or close it manually by using `showTip()`,`closeTip()` help functions.
+     *  
+     * Default = true
      */
-    offsetArrowYPosition?: number;
+    active?: boolean;
     /**
-     * Trigger your custom action on tip item press.
+     * Trigger your custom action on item press.
      */
     onPressItem?: () => void;
     /**
@@ -117,7 +120,7 @@ export interface ITip {
     onDismiss?: () => void;
 }
 
-export interface ITipProviderWrapper {
+export interface ITipProvider {
     /**
      * Set global style for the tip wrapper
      */
@@ -165,7 +168,7 @@ export interface ITipProviderWrapper {
     /**
      * Style for `Next, Prev, Close` action buttons text on tip tour mode.
      */
-    prevNextTextStyle?: ViewStyle;
+    prevNextTextStyle?: TextStyle;
 }
 
 /**
@@ -184,4 +187,4 @@ export function showTip(tipId?: string | null, delay?: number | null): void;
 export function showTipTour(steps: ITipStep[]): void;
 
 export class Tip extends React.Component<ITip> { }
-export default class TipProviderWrapper extends React.Component<ITipProviderWrapper> { }
+export default class TipProvider extends React.Component<ITipProvider> { }
