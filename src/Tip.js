@@ -20,7 +20,8 @@ const Tip = (props) => {
         onPressItem,
         onDismiss,
         onTipPress,
-        style
+        style,
+        active = true
     } = props
 
     const tipId = React.useRef('')
@@ -61,6 +62,7 @@ const Tip = (props) => {
     return (
         <TouchableOpacity
             onLayout={getDimensions}
+            disabled={!active}
             onPress={showTip}
             style={{ ...style, alignSelf: 'baseline' }}
         >
@@ -85,7 +87,8 @@ Tip.propTypes = {
     pulseColor: PropTypes.string,
     onPressItem: PropTypes.func,
     onTipPress: PropTypes.func,
-    onDismiss: PropTypes.func
+    onDismiss: PropTypes.func,
+    active: PropTypes.bodyStyle
 }
 
 export default Tip
