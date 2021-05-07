@@ -88,7 +88,7 @@ Tip.propTypes = {
     onPressItem: PropTypes.func,
     onTipPress: PropTypes.func,
     onDismiss: PropTypes.func,
-    active: PropTypes.bodyStyle
+    active: PropTypes.bool
 }
 
 export default Tip
