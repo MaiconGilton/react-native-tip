@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Animated, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Text, Dimensions, View, ViewPropTypes, Easing } from 'react-native'
+import { Animated, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Text, Dimensions, View, ViewPropTypes, Easing, Modal } from 'react-native'
 import TipManager from './TipManager'
 import PropTypes from 'prop-types'
 import { getItemCoordinates, getTipPositionProps, ARROW_WIDTH, ARROW_HEIGHT, RENDER_BOUNDARY, clearItemStyles } from './utils'
@@ -416,11 +416,19 @@ export default class TipProvider extends Component {
         if (!this.state.itemCoordinates) return null
 
         return (
-            <>
+            <Modal
+                animationType="fade"
+                visible
+                onRequestClose={this.closeTip}
+                transparent
+                hardwareAccelerated
+                presentationStyle='overFullScreen'
+                statusBarTranslucent
+            >
                 {this.renderOverlay()}
                 {this.renderTip()}
                 {this.renderItem()}
-            </>
+            </Modal>
         )
     }
 }
