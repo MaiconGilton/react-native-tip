@@ -26,6 +26,10 @@ const Tip = (props) => {
 
     const tipId = React.useRef('')
 
+    React.useEffect(() => {
+        return () => TipManager.unregisterTip(tipId.current)
+    }, [])
+
     function showTip(target) {
         TipManager.showTip(tipId.current)
     }

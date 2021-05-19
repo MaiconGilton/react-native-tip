@@ -29,6 +29,18 @@ class TipManager {
         }
     }
 
+    unregisterTip(tipId) {
+        if (tipId) {
+            const index = this.tips.findIndex(i => i.id === tipId)
+
+            if (index >= 0) {
+                const tips = this.tips
+                tips.splice(index, 1)
+                this.tips = tips
+            }
+        }
+    }
+
     updateProps(tipId: string, props: any) {
         const index = this.tips.findIndex(i => i.id === tipId)
         const tips = this.tips
