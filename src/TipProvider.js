@@ -34,7 +34,7 @@ export default class TipProvider extends Component {
             this.setState({ tipHasProps: false })
         }
 
-        const itemCoordinates = await getItemCoordinates(tip.target, tip.layout)
+        const itemCoordinates = await getItemCoordinates(tip.target)
 
         this.setState({
             ...tip,
