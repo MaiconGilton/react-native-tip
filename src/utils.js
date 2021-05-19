@@ -1,9 +1,9 @@
-import { UIManager, Dimensions } from 'react-native'
+import { UIManager, Dimensions, StatusBar } from 'react-native'
 
 export const TOP_OFFSET = 5
 export const ARROW_WIDTH = 20
 export const ARROW_HEIGHT = 15
-export const RENDER_BOUNDARY = 10
+export const RENDER_BOUNDARY = 5
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 
@@ -26,9 +26,11 @@ export function clearItemStyles(styles) {
     }
 }
 
-export async function getItemCoordinates(target, layout) {
+export async function getItemCoordinates(target) {
     const itemCoordinates = new Promise((resolve, reject) => {
         UIManager.measure(target, (x, y, width, height, px, py) => {
+            py = py + StatusBar.currentHeight
+
             const coords = {
                 width,
                 height,
@@ -85,71 +87,11 @@ export function getTipPositionProps(itemCoords, tipHeight, tipWidth) {
         arrowPosition.transform = [{ scaleY: -1 }]
     }
 
-    const xOffset = centerPoint.x
-    const yOffset = centerPoint.y + TOP_OFFSET
+    const pp = 0.5 - (centerPoint.x - tipPosition.left) * 0.5 / (tipWidth / 2)
 
-    let tipPositionLabel = 'center-bottom'
-
-    if (xOffset < screenWidth * 0.25) {
-        if (yOffset + tipHeight > screenHeight) tipPositionLabel = 'bottom-left'
-        else tipPositionLabel = 'top-left'
-    } else if (xOffset > screenWidth * 0.75) {
-        if (yOffset + tipHeight > screenHeight) tipPositionLabel = 'bottom-right'
-        else tipPositionLabel = 'top-right'
-    } else {
-        if (yOffset + tipHeight > screenHeight) tipPositionLabel = 'center-top'
-        else tipPositionLabel = 'center-bottom'
-    }
-
-    let pivotPoint
-    const defaultPivotPoint = { x: 0.5, y: 0.5 }
-
-    switch (tipPositionLabel) {
-        case 'top-left':
-            pivotPoint = {
-                x: defaultPivotPoint.x - 0,
-                y: defaultPivotPoint.y - 0
-            }
-            break
-
-        case 'top-right':
-            pivotPoint = {
-                x: defaultPivotPoint.x - 1,
-                y: defaultPivotPoint.y - 0
-            }
-            break
-
-        case 'bottom-left':
-            pivotPoint = {
-                x: defaultPivotPoint.x - 0,
-                y: defaultPivotPoint.y - 1
-            }
-            break
-
-        case 'bottom-right':
-            pivotPoint = {
-                x: defaultPivotPoint.x - 1,
-                y: defaultPivotPoint.y - 1
-            }
-            break
-
-        case 'center-top':
-            pivotPoint = {
-                x: defaultPivotPoint.x - 0.5,
-                y: defaultPivotPoint.y - 1
-            }
-            break
-
-        case 'center-bottom':
-            pivotPoint = {
-                x: defaultPivotPoint.x - 0.5,
-                y: defaultPivotPoint.y - 0
-            }
-            break
-
-        default:
-            pivotPoint = defaultPivotPoint
-            break
+    const pivotPoint = {
+        x: pp * tipWidth,
+        y: (shouldInvertTip ? -0.5 : 0.5) * tipHeight
     }
 
     return {
@@ -157,10 +99,6 @@ export function getTipPositionProps(itemCoords, tipHeight, tipWidth) {
         shouldInvertTip,
         arrowPosition,
         pivotPoint,
-        tipHasProps: true,
-        tipDimensions: {
-            height: tipHeight,
-            width: tipWidth
-        }
+        tipHasProps: true
     }
 }

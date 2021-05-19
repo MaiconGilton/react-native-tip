@@ -160,7 +160,6 @@ export default class TipProvider extends Component {
 
     getTipAnimation() {
         const {
-            tipDimensions = { width: 0, height: 0 },
             pivotPoint = { x: 0, y: 0 }
         } = this.state
 
@@ -170,8 +169,8 @@ export default class TipProvider extends Component {
                 outputRange: [0, 0, 1]
             }),
             transform: [
-                { translateX: -1 * tipDimensions.width * pivotPoint.x },
-                { translateY: -1 * tipDimensions.height * pivotPoint.y },
+                { translateX: -1 * pivotPoint.x },
+                { translateY: -1 * pivotPoint.y },
                 {
                     scale:
                         this.animation.interpolate({
@@ -179,8 +178,8 @@ export default class TipProvider extends Component {
                             outputRange: [0, 1]
                         })
                 },
-                { translateX: tipDimensions.width * pivotPoint.x },
-                { translateY: tipDimensions.height * pivotPoint.y }
+                { translateX: pivotPoint.x },
+                { translateY: pivotPoint.y }
             ]
         }
     }
