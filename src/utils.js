@@ -101,24 +101,6 @@ export function getTipPositionProps(itemCoords, tipHeight, tipWidth) {
         else tipPositionLabel = 'center-bottom'
     }
 
-    if (screenWidth - centerPoint.x <= 32) {
-        if (tipPositionLabel === 'top-right') {
-            tipPosition.borderTopRightRadius = 15
-            arrowPosition.borderRightWidth = 4
-        } else if (tipPositionLabel === 'bottom-right') {
-            tipPosition.borderBottomRightRadius = 15
-            arrowPosition.borderRightWidth = 4
-        }
-    } else if (centerPoint.x <= 32) {
-        if (tipPositionLabel === 'top-left') {
-            tipPosition.borderTopLeftRadius = 15
-            arrowPosition.borderLeftWidth = 4
-        } else if (tipPositionLabel === 'bottom-left') {
-            tipPosition.borderBottomLeftRadius = 15
-            arrowPosition.borderLeftWidth = 4
-        }
-    }
-
     let pivotPoint
     const defaultPivotPoint = { x: 0.5, y: 0.5 }
 
