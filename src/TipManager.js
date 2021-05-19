@@ -17,7 +17,15 @@ class TipManager {
 
     registerTip(tip) {
         if (tip) {
-            this.tips = [...this.tips, tip]
+            const index = this.tips.findIndex(i => i.id === tip.id)
+
+            if (index >= 0) {
+                const tips = this.tips
+                tips[index] = tip
+                this.tips = tips
+            } else {
+                this.tips = [...this.tips, tip]
+            }
         }
     }
 
