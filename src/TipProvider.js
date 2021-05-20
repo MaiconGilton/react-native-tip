@@ -386,6 +386,7 @@ export default class TipProvider extends Component {
 
         const item = React.cloneElement(children, {
             ...children.props,
+            onPress: onPressItem,
             style: clearItemStyles(children.props.style)
         })
 
