@@ -51,8 +51,8 @@ class TipManager {
     showTip(tipId: string, delay: number = 0) {
         const showItem = () => {
             const tip = this.tips.find(i => i.id === tipId)
-            tip.tourProps = null
             if (!tip) return setTimeout(showItem, 250)
+            tip.tourProps = null
             this.tipProvider.showTip(tip)
         }
 
