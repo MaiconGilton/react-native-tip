@@ -79,13 +79,13 @@ export interface ITip {
     /**
      * Your component to be rendered.
      */
-    children?: React.Component;
+    children?: React.ReactElement;
     /**
      * Set a custom component to be rendered inside your tip.
      * You can inject your current global props in your custom component 
      * by `titleStyle` and `bodyStyle`.
      */
-    renderTip?: ({ titleStyle: TextStyle, bodyStyle: TextStyle }) => React.Component;
+    renderTip?: ({ titleStyle: TextStyle, bodyStyle: TextStyle }) => React.ReactElement;
     /**
      * Show item pulse animation when tip is open.
      */
