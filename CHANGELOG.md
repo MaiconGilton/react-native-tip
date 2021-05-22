@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.6...v0.0.7) (2021-05-22)
+
+
+### Bug Fixes
+
+* change return type from Component to ReactElement ([7d63a8e](https://github.com/MaiconGilton/react-native-tip/commit/7d63a8e0e40e652510c1c2dadd429105608c7be2))
+* onPressItem event when tip in open ([0033bee](https://github.com/MaiconGilton/react-native-tip/commit/0033beefab43f404ed85cb0d8efc5935522455b2))
+
 ### [0.0.6](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.5...v0.0.6) (2021-05-20)
 
 
