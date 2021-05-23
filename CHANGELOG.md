@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.7...v0.0.8) (2021-05-23)
+
+
+### Bug Fixes
+
+* change not required props to optional ([20db303](https://github.com/MaiconGilton/react-native-tip/commit/20db30328abc042c621e1f27f1c14468041111a3))
+* change wrong children React type ([4c5136e](https://github.com/MaiconGilton/react-native-tip/commit/4c5136e624c5f6191a93a41663df392f21d09c30))
+
 ### [0.0.7](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.6...v0.0.7) (2021-05-22)
 
 
