@@ -25,19 +25,19 @@ export interface ITipStep {
      * Useful to wait for some other async task finish like navigating between screens.
      * Use it with `prevAction()` or `nextAction()` methods.
     */
-    delay: number;
+    delay?: number;
     /**
      * Action to be executed right before `Prev` button is pressed.
      * 
      * Use it with `delay` prop for async tasks.
     */
-    prevAction: () => void;
+    prevAction?: () => void;
     /**
      * Action to be executed right before `Next` button is pressed.
      *
      * Use it with `delay` prop for async tasks.
     */
-    nextAction: () => void;
+    nextAction?: () => void;
 }
 
 export interface ITip {
@@ -48,7 +48,7 @@ export interface ITip {
     /**
      * The title text of your tip.
      */
-    title: string;
+    title?: string;
     /**
      * The body text of your tip.
      */
@@ -85,7 +85,7 @@ export interface ITip {
      * You can inject your current global props in your custom component 
      * by `titleStyle` and `bodyStyle`.
      */
-    renderTip?: ({ titleStyle: TextStyle, bodyStyle: TextStyle }) => React.ReactElement;
+    renderTip?: ({ titleStyle, bodyStyle }) => React.ReactElement;
     /**
      * Show item pulse animation when tip is open.
      */
