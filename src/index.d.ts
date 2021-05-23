@@ -79,7 +79,7 @@ export interface ITip {
     /**
      * Your component to be rendered.
      */
-    children?: React.ReactElement;
+    children?: React.ReactNode;
     /**
      * Set a custom component to be rendered inside your tip.
      * You can inject your current global props in your custom component 
