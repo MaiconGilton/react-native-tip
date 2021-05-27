@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.8...v0.0.9) (2021-05-27)
+
+
+### Bug Fixes
+
+* cannot read property 'style' of undefined error ([0895cd1](https://github.com/MaiconGilton/react-native-tip/commit/0895cd165f9210fcb1b26f6a0ca0faacd2545423))
+
 ### [0.0.8](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.7...v0.0.8) (2021-05-23)
 
 
