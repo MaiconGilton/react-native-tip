@@ -194,7 +194,7 @@ export default class TipProvider extends Component {
         if (!showItemPulseAnimation) return null
         let backgroundColor
 
-        if (children.props.style && children.props.style.backgroundColor) {
+        if (children.props?.style && children.props.style.backgroundColor) {
             backgroundColor = children.props.style.backgroundColor
         }
 
@@ -203,7 +203,7 @@ export default class TipProvider extends Component {
         return (
             <Animated.View
                 style={{
-                    ...children.props.style,
+                    ...children.props?.style,
                     ...StyleSheet.absoluteFillObject,
                     backgroundColor,
                     transform: [
@@ -386,8 +386,7 @@ export default class TipProvider extends Component {
 
         const item = React.cloneElement(children, {
             ...children.props,
-            onPress: onPressItem,
-            style: clearItemStyles(children.props.style)
+            style: clearItemStyles(children.props?.style)
         })
 
         return (
