@@ -379,7 +379,8 @@ export default class TipProvider extends Component {
             itemCoordinates,
             children,
             onPressItem,
-            destroyItemImediatelly
+            destroyItemImediatelly,
+            layout
         } = this.state
 
         if (destroyItemImediatelly) return null
@@ -397,6 +398,8 @@ export default class TipProvider extends Component {
                 }}
                 style={{
                     position: 'absolute',
+                    width: layout.width,
+                    height: layout.height,
                     top: itemCoordinates.centerPoint.y,
                     left: itemCoordinates.centerPoint.x,
                     transform: [
