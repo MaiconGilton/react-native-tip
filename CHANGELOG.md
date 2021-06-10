@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.9...v0.0.10) (2021-06-10)
+
+
+### Bug Fixes
+
+* force cloned item to copy item dimensions ([03c4086](https://github.com/MaiconGilton/react-native-tip/commit/03c40862655515852afeb584f32f0fe988493134))
+
 ### [0.0.9](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.8...v0.0.9) (2021-05-27)
 
 
