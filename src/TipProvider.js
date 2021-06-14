@@ -321,13 +321,17 @@ export default class TipProvider extends Component {
                                 bodyStyle: _bodyStyle
                             })
                             : <>
-                                <Text style={_titleStyle}>
-                                    {title}
-                                </Text>
+                                {title &&
+                                    <Text style={_titleStyle}>
+                                        {title}
+                                    </Text>
+                                }
 
-                                <Text style={_bodyStyle}>
-                                    {body}
-                                </Text>
+                                {body &&
+                                    <Text style={_bodyStyle}>
+                                        {body}
+                                    </Text>
+                                }
                             </>
                     }
 
