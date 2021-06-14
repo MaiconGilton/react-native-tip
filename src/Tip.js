@@ -23,6 +23,7 @@ const Tip = (props) => {
         style,
         active = true,
         activeItemStyle,
+        pulseStyle,
     } = props
 
     const tipId = React.useRef('')
@@ -60,6 +61,7 @@ const Tip = (props) => {
             onDismiss,
             onTipPress,
             activeItemStyle,
+            pulseStyle,
         })
     }
 
@@ -96,6 +98,7 @@ Tip.propTypes = {
     onDismiss: PropTypes.func,
     active: PropTypes.bool,
     activeItemStyle: Text.propTypes.style,
+    pulseStyle: Text.propTypes.style,
 }
 
 export default Tip

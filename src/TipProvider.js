@@ -191,6 +191,7 @@ export default class TipProvider extends Component {
             pulseColor,
             ...activeItemStyle,
             layout,
+            pulseStyle = {}
         } = this.state
 
         if (!showItemPulseAnimation) return null
@@ -210,8 +211,10 @@ export default class TipProvider extends Component {
                     width: layout.width,
                     height: layout.height,
                     ...activeItemStyle,
+                    ...pulseStyle,
                     backgroundColor,
                     transform: [
+                        ...(pulseStyle?.transform || []),
                         {
                             scaleX: this.pulseAnim.interpolate({
                                 inputRange: [0, 1],

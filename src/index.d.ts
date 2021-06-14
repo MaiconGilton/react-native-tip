@@ -75,6 +75,10 @@ export interface ITip {
      */
     bodyStyle?: TextStyle;
     /**
+     * Style for the pulse animation.
+     */
+    pulseStyle?: TextStyle;
+    /**
      * Set opacity intensity of overlay.
      *
      * Default= `0.6`
