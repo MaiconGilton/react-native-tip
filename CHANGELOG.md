@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.10...v0.0.11) (2021-06-14)
+
+
+### Features
+
+* add style prop to active item ([05627a6](https://github.com/MaiconGilton/react-native-tip/commit/05627a6762f5443b1db980a400f0ba78ff936497))
+* add style prop to pulse animation ([dcdbe47](https://github.com/MaiconGilton/react-native-tip/commit/dcdbe47d9e8c3dd9a8f17d4ebe975a56bd91131e))
+* control tip props direct from showTip function ([6f4f82d](https://github.com/MaiconGilton/react-native-tip/commit/6f4f82d92d5ffa2bc1bc2362182bb25e8b411bfb))
+
+
+### Bug Fixes
+
+* add onPressOut item listener ([a0a3916](https://github.com/MaiconGilton/react-native-tip/commit/a0a3916d0fd6475ae9f47920d6d0661f1b9991b4))
+* make title and body props optional ([3593ada](https://github.com/MaiconGilton/react-native-tip/commit/3593ada5b3efc6dd29e1802cc3fabcc54b2d4d96))
+
 ### [0.0.10](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.9...v0.0.10) (2021-06-10)
 
 
