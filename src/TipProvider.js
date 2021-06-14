@@ -184,37 +184,25 @@ export default class TipProvider extends Component {
         }
     }
 
-    renderItemPulseAnimation = () => {
+    renderItemPulseAnimation = (coordinates) => {
         const {
             children,
             showItemPulseAnimation = this.props.showItemPulseAnimation,
             pulseColor,
-            activeItemStyle,
             layout,
             pulseStyle = {}
         } = this.state
 
         if (!showItemPulseAnimation) return null
-        let backgroundColor
-
-        if (children.props?.style && children.props.style.backgroundColor) {
-            backgroundColor = children.props.style.backgroundColor
-        }
-
-        if (pulseColor) backgroundColor = pulseColor
 
         return (
             <Animated.View
                 style={{
-                    ...children.props?.style,
-                    ...StyleSheet.absoluteFillObject,
-                    width: layout.width,
-                    height: layout.height,
-                    ...activeItemStyle,
+                    ...coordinates,
                     ...pulseStyle,
-                    backgroundColor,
+                    backgroundColor: pulseColor,
                     transform: [
-                        ...(pulseStyle?.transform || []),
+                        ...(coordinates?.transform || []),
                         {
                             scaleX: this.pulseAnim.interpolate({
                                 inputRange: [0, 1],
@@ -402,33 +390,43 @@ export default class TipProvider extends Component {
             ...children.props,
             // onPress: () => onPressItem && onPressItem(),
             onPressOut: () => onPressItem && onPressItem(),
-            style: {
-                ...clearItemStyles(children.props?.style),
-                ...activeItemStyle
-            }
+            style: clearItemStyles(children.props?.style),
         })
 
+        const width = activeItemStyle?.width || layout.width
+        const height = activeItemStyle?.height || layout.height
+
+        const coordinates = {
+            ...activeItemStyle,
+            position: 'absolute',
+            width,
+            height,
+            top: itemCoordinates.centerPoint.y,
+            left: itemCoordinates.centerPoint.x,
+            transform: [
+                { translateX: -width / 2 },
+                { translateY: -height / 2 }
+            ],
+        }
+
         return (
-            <TouchableOpacity
-                onPress={() => {
-                    if (onPressItem) onPressItem()
-                    else this.closeTip()
-                }}
-                style={{
-                    position: 'absolute',
-                    width: layout.width,
-                    height: layout.height,
-                    top: itemCoordinates.centerPoint.y,
-                    left: itemCoordinates.centerPoint.x,
-                    transform: [
-                        { translateX: -itemCoordinates.width / 2 },
-                        { translateY: -itemCoordinates.height / 2 }
-                    ]
-                }}
-            >
-                {this.renderItemPulseAnimation()}
-                {item}
-            </TouchableOpacity>
+            <View>
+                {this.renderItemPulseAnimation(coordinates)}
+
+                <TouchableOpacity
+                    onPress={() => {
+                        if (onPressItem) onPressItem()
+                        else this.closeTip()
+                    }}
+                    style={{
+                        ...coordinates,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}
+                >
+                    {item}
+                </TouchableOpacity>
+            </View>
         )
     }
 
