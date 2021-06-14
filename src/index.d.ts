@@ -187,10 +187,10 @@ export function closeTip(): void;
 /**
   * Show your tip, can be called anywhere in your code.
  * 
- * @param {(string | null)} [tipId] - Show a specific tip by passing its id.
- * @param {(number | null)} [delay] - Delay your tip appearing, default=0
+ * @param {(string)} [tipId] - Show a specific tip by passing its id.
+ * @param {(number)} [delay] - Delay your tip appearing, default=0
  */
-export function showTip(tipId?: string | null, delay?: number | null): void;
+export function showTip(tipId?: string, delay?: number, props?: Partial<ITip>): void;
 
 export function showTipTour(steps: ITipStep[]): void;
 

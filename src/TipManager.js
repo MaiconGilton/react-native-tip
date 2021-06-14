@@ -48,12 +48,12 @@ class TipManager {
         this.tips = tips
     }
 
-    showTip(tipId: string, delay: number = 0) {
+    showTip(tipId: string, delay: number = 0, props: {}) {
         const showItem = () => {
             const tip = this.tips.find(i => i.id === tipId)
             if (!tip) return setTimeout(showItem, 250)
             tip.tourProps = null
-            this.tipProvider.showTip(tip)
+            this.tipProvider.showTip({ ...tip, ...props })
         }
 
         if (tipId && delay) {
