@@ -189,7 +189,7 @@ export default class TipProvider extends Component {
             children,
             showItemPulseAnimation = this.props.showItemPulseAnimation,
             pulseColor,
-            ...activeItemStyle,
+            activeItemStyle,
             layout,
             pulseStyle = {}
         } = this.state
