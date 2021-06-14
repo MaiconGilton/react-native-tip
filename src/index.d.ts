@@ -58,6 +58,10 @@ export interface ITip {
     */
     style?: ViewStyle;
     /**
+    * Style for the item when the tip is open.
+    */
+    activeItemStyle?: ViewStyle;
+    /**
     * Style for the tip.
     *  Use carefully, this can mess up the tip position.
     */

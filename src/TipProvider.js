@@ -188,7 +188,9 @@ export default class TipProvider extends Component {
         const {
             children,
             showItemPulseAnimation = this.props.showItemPulseAnimation,
-            pulseColor
+            pulseColor,
+            ...activeItemStyle,
+            layout,
         } = this.state
 
         if (!showItemPulseAnimation) return null
@@ -205,6 +207,9 @@ export default class TipProvider extends Component {
                 style={{
                     ...children.props?.style,
                     ...StyleSheet.absoluteFillObject,
+                    width: layout.width,
+                    height: layout.height,
+                    ...activeItemStyle,
                     backgroundColor,
                     transform: [
                         {
@@ -380,14 +385,18 @@ export default class TipProvider extends Component {
             children,
             onPressItem,
             destroyItemImediatelly,
-            layout
+            layout,
+            activeItemStyle
         } = this.state
 
         if (destroyItemImediatelly) return null
 
         const item = React.cloneElement(children, {
             ...children.props,
-            style: clearItemStyles(children.props?.style)
+            style: {
+                ...clearItemStyles(children.props?.style),
+                ...activeItemStyle
+            }
         })
 
         return (
