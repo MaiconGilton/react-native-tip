@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.11...v0.0.12) (2021-06-23)
+
+
+### Bug Fixes
+
+* typo ([bc33232](https://github.com/MaiconGilton/react-native-tip/commit/bc33232f244d443ff1a277a1e8bdd38deb2df809))
+
 ### [0.0.11](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.10...v0.0.11) (2021-06-14)
 
 
