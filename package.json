@@ -19,7 +19,8 @@
         "src"
     ],
     "scripts": {
-        "release": "standard-version"
+        "release": "standard-version",
+        "publish": "git push --follow-tags origin main && npm publish"
     },
     "peerDependencies": {
         "react": "*",
