@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.13](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.12...v0.0.13) (2021-06-24)
+
+
+### Features
+
+* add option to inject tipProps direct on tour steps ([c159cfd](https://github.com/MaiconGilton/react-native-tip/commit/c159cfda7dd0dbc988b74297989fdf5030f6eca8))
+
+
+### Bug Fixes
+
+* reset pulse animation on tip change ([7ffa75b](https://github.com/MaiconGilton/react-native-tip/commit/7ffa75b9d4dc62e414ee03c661f3729fdeadd74d))
+
 ### [0.0.12](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.11...v0.0.12) (2021-06-23)
 
 
