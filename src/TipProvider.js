@@ -30,6 +30,8 @@ export default class TipProvider extends Component {
 
     showTip = async (tip) => {
         if (this.state.itemCoordinates) {
+            this.pulseAnim.setValue(0)
+            this.animation.setValue(0)
             this.overlayAnimation.setValue(1)
             this.setState({ tipHasProps: false })
         }
