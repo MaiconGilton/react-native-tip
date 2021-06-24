@@ -12,11 +12,11 @@ export interface ITipStep {
     /**
      * Previous tip id, `optional`
     */
-    prevId: string;
+    prevId?: string;
     /**
      * Next tip id, `optional`
     */
-    nextId: string;
+    nextId?: string;
     /**
      * Timeout before triggering the tip change to next or previous one. 
      *
@@ -38,6 +38,7 @@ export interface ITipStep {
      * Use it with `delay` prop for async tasks.
     */
     nextAction?: () => void;
+    tipProps?: Omit<ITip, 'id'>;
 }
 
 export interface ITip {

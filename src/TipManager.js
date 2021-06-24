@@ -69,8 +69,9 @@ class TipManager {
         this.steps = steps
 
         const showItem = () => {
-            const tip = this.tips.find(i => i.id === currentStep.id)
+            let tip = this.tips.find(i => i.id === currentStep.id)
             if (!tip) return setTimeout(showItem, 250)
+            tip = { ...tip, ...currentStep.tipProps }
             tip.tourProps = currentStep
             this.tipProvider.showTip(tip)
         }
@@ -92,7 +93,7 @@ class TipManager {
                 ? stepTourProps.prevId
                 : stepTourProps.nextId
 
-            const tip = this.tips.find(i => i.id === id)
+            let tip = this.tips.find(i => i.id === id)
 
             if (!tip) {
                 if (tries > 10) {
@@ -104,6 +105,7 @@ class TipManager {
             }
 
             tip.tourProps = this.steps.find(i => i.id === id)
+            tip = { ...tip, ...tip.tourProps.tipProps }
 
             if (direction === 'prev' && stepTourProps.prevAction) {
                 stepTourProps.prevAction()
