@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.13...v0.0.14) (2021-07-13)
+
+
+### Bug Fixes
+
+* position props of pulse component ([c9d1624](https://github.com/MaiconGilton/react-native-tip/commit/c9d16248e4601d4325cb0da3499b6eb497bfac90))
+
 ### [0.0.13](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.12...v0.0.13) (2021-06-24)
 
 
