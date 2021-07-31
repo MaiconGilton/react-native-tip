@@ -186,10 +186,12 @@ export default class TipProvider extends Component {
         }
     }
 
-    renderItemPulseAnimation = (width, height) => {
+    renderItemPulseAnimation = (coordinates) => {
         const {
+            children,
             showItemPulseAnimation = this.props.showItemPulseAnimation,
             pulseColor,
+            layout,
             pulseStyle = {}
         } = this.state
 
@@ -198,11 +200,12 @@ export default class TipProvider extends Component {
         return (
             <Animated.View
                 style={{
-                    width,
-                    height,
+                    position: 'absolute',
+                    // ...coordinates,
                     ...pulseStyle,
                     backgroundColor: pulseColor,
                     transform: [
+                        // ...(coordinates?.transform || []),
                         {
                             scaleX: this.pulseAnim.interpolate({
                                 inputRange: [0, 1],
@@ -410,20 +413,17 @@ export default class TipProvider extends Component {
         }
 
         return (
-            <View>
-                <View style={coordinates}>
-                    {this.renderItemPulseAnimation(width, height)}
-                </View>
+            <View style={{
+                ...coordinates,
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}>
+                {this.renderItemPulseAnimation()}
 
                 <TouchableOpacity
                     onPress={() => {
                         if (onPressItem) onPressItem()
                         else this.closeTip()
-                    }}
-                    style={{
-                        ...coordinates,
-                        justifyContent: 'center',
-                        alignItems: 'center',
                     }}
                 >
                     {item}
