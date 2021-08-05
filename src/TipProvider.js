@@ -437,7 +437,6 @@ export default class TipProvider extends Component {
 
         return (
             <Modal
-                animationType="fade"
                 visible
                 onRequestClose={this.closeTip}
                 transparent
