@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.20](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.19...v0.0.20) (2023-11-19)
+
+
+### Features
+
+* add global configuration for pulseColor and pulseStyle ([e9580c9](https://github.com/MaiconGilton/react-native-tip/commit/e9580c9a2de2006556ae24fca838fcad993503ea))
+* add types for renderTip ([10dfeef](https://github.com/MaiconGilton/react-native-tip/commit/10dfeefff29451c7f855d689ee39b19ba4c79e12))
+
+
+### Bug Fixes
+
+* change pulseStyle type ([efff912](https://github.com/MaiconGilton/react-native-tip/commit/efff912b2c41c140d0f41374785d055100b5a31d))
+* remove unnecessary code ([26b7b95](https://github.com/MaiconGilton/react-native-tip/commit/26b7b9551f997dfb9b5d449e73eda0489a23b818))
+* render buttons tips ([cff9bca](https://github.com/MaiconGilton/react-native-tip/commit/cff9bca4a365fe6ea2c7665839f7516e3db718e1))
+* tip arrow leg position ([0c53a54](https://github.com/MaiconGilton/react-native-tip/commit/0c53a5417847a290fd03f1f631aaaaf5bd1a4a07))
+* tip render position on tranlucent statusbar ([025cc88](https://github.com/MaiconGilton/react-native-tip/commit/025cc880ff27cc7b1a87dd51e5c7bd5e7a2680ce))
+
 ### [0.0.19](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.18...v0.0.19) (2023-01-05)
 
 ### [0.0.18](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.17...v0.0.18) (2021-07-31)
