@@ -189,9 +189,9 @@ export default class TipProvider extends Component {
     const {
       children,
       showItemPulseAnimation = this.props.showItemPulseAnimation,
-      pulseColor,
+      pulseColor = this.props.pulseColor,
+      pulseStyle = this.props.pulseStyle,
       layout,
-      pulseStyle = {}
     } = this.state
 
     if (!showItemPulseAnimation) return null

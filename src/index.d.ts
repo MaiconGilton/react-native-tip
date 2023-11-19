@@ -156,6 +156,14 @@ export interface ITipProvider {
      * Set global pulse animation on item when tip is open.
      */
     showItemPulseAnimation?: boolean;
+  /**
+   * Set global pulse animation color.
+   */
+  pulseColor?: string;
+  /**
+   * Global style for the pulse animation.
+   */
+  pulseStyle?: ViewStyle;
     /**
      * When `true` set a dark custom color scheme for your tip.
      * 
