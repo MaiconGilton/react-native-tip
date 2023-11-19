@@ -46,7 +46,6 @@ export async function getItemCoordinates(target, ignoreStatusBar) {
         })
     })
 
-    await itemCoordinates
     return itemCoordinates
 }
 
