@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TouchableOpacity } from 'react-native'
+import { TouchableWithoutFeedback } from 'react-native'
 import TipManager from './TipManager'
 
 const Tip = (props) => {
@@ -67,14 +67,14 @@ const Tip = (props) => {
   if (tipId.current) TipManager.updateProps(tipId.current, props)
 
   return (
-    <TouchableOpacity
+    <TouchableWithoutFeedback
       onLayout={getDimensions}
       disabled={!active}
       onPress={showTip}
-      style={{ ...style, alignSelf: 'baseline' }}
+      style={style}
     >
       {children}
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   )
 }
 
