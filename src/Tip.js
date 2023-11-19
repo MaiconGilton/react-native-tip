@@ -73,10 +73,8 @@ const Tip = (props) => {
       onLayout={getDimensions}
       disabled={!active}
       onPress={showTip}
-      style={style}
-    >
-      {children}
-    </TouchableWithoutFeedback>
+      children={children}
+    />
   )
 }
 
