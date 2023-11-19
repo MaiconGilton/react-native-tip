@@ -23,6 +23,7 @@ const Tip = (props) => {
     active = true,
     activeItemStyle,
     pulseStyle,
+    pulseIntensity
   } = props
 
   const tipId = React.useRef('')
@@ -61,6 +62,7 @@ const Tip = (props) => {
       onTipPress,
       activeItemStyle,
       pulseStyle,
+      pulseIntensity
     })
   }
 

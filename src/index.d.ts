@@ -104,6 +104,10 @@ export interface ITip {
    */
   pulseStyle?: ViewStyle;
   /**
+   * Style for the pulse animation intensity size.
+   */
+  pulseIntensity?: number;
+  /**
    * Allow auto dismiss on touch overlay.
    */
   dismissable?: boolean;
@@ -160,6 +164,10 @@ export interface ITipProvider {
    * Global style for the pulse animation.
    */
   pulseStyle?: ViewStyle;
+  /**
+   * Global style for the pulse animation intensity size.
+   */
+  pulseIntensity?: number;
   /**
    * Required, this will help the calculation of the exact position for the tip to rendered 
    */

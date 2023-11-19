@@ -189,7 +189,7 @@ export default class TipProvider extends Component {
       showItemPulseAnimation = this.props.showItemPulseAnimation,
       pulseColor = this.props.pulseColor,
       pulseStyle = this.props.pulseStyle,
-      layout,
+      pulseIntensity = this.props.pulseIntensity || 1.5
     } = this.state
 
     if (!showItemPulseAnimation) return null
@@ -206,13 +206,13 @@ export default class TipProvider extends Component {
             {
               scaleX: this.pulseAnim.interpolate({
                 inputRange: [0, 1],
-                outputRange: [1, 1.5]
+                outputRange: [1, pulseIntensity]
               })
             },
             {
               scaleY: this.pulseAnim.interpolate({
                 inputRange: [0, 1],
-                outputRange: [1, 1.5]
+                outputRange: [1, pulseIntensity]
               })
             }
           ],
