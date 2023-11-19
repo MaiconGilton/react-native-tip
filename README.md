@@ -150,54 +150,58 @@ You can find a complete example in [src/example/components/TourButton](src/examp
 <br/><br />
 ## Tip Props
 
-| Property               | Type                                                                  | Description                                                                                                                                                                                                                                             |
-| ---------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                     | `string` or `number`                                                  | The tip's id, useful to control it.                                                                                                                                                                                                                     |
-| title                  | `string`                                                              | The title text of your tip.                                                                                                                                                                                                                             |
-| titleStyle             | `TextStyle`                                                           | Style for the title of your tip.                                                                                                                                                                                                                        |
-| body                   | `string`                                                              | The body text of your tip.                                                                                                                                                                                                                              |
-| bodyStyle              | `TextStyle`                                                           | Style for the body of your tip.                                                                                                                                                                                                                         |
-| style                  | `ViewStyle`                                                           | Style of the item wrapper component: `<Tip style={style}>`.                                                                                                                                                                                             |
-| activeItemStyle        | `ViewStyle`                                                           | Style for the item when the tip is open.>`.                                                                                                                                                                                                             |
-| tipContainerStyle      | `ViewStyle`                                                           | Style for the tip. Use carefully, this can mess up the tip's position.                                                                                                                                                                                  |
-| overlayOpacity         | `number`                                                              | Set opacity intensity of overlay. default `0.6`                                                                                                                                                                                                         |
-| renderTip              | `({ titleStyle:TextStyle, bodyStyle:TextStyle }) => React.Component;` | Set a custom component to be rendered inside your tip. You can inject your current tip's global titleStyle and bodyStyle (if you defined one in your `TipProvider`) props direct in your custom tip component with `titleStyle` and `bodyStyle` params. |
-| showItemPulseAnimation | `boolean`                                                             | Show item pulse animation when tip is open.                                                                                                                                                                                                             |
-| pulseColor             | `string`                                                              | Set pulse animation color.                                                                                                                                                                                                                              |
-| pulseStyle             | `ViewStyle`                                                           | Style for the pulse animation.                                                                                                                                                                                                                          |
-| dismissable            | `boolean`                                                             | Allow auto dismiss on touch overlay.                                                                                                                                                                                                                    |
-| active                 | `boolean`  Default = true                                             | If true the item becomes pressable and shows the tip automatically when pressed. OBS: if the item is already a pressable component, you should show or close it manually by using `showTip()`, `closeTip()` help functions.                             |
-| onPressItem            | `() => void`                                                          | Trigger your custom action on item press.                                                                                                                                                                                                               |
-| onTipPress             | `() => void`                                                          | Trigger your custom action on tip press.                                                                                                                                                                                                                |
-| onDismiss              | `() => void`                                                          | Override dismiss natural action.                                                                                                                                                                                                                        |
+| Property          | Type                 | Description                               |
+| ----------------- | -------------------- | ----------------------------------------- |
+| id                | `string` or `number` | The tip's id, useful to control it.|
+| title             | `string`             | The title text of your tip.|
+| titleStyle        | `TextStyle`          | Style for the title of your tip.|
+| body              | `string`             | The body text of your tip.|
+| bodyStyle         | `TextStyle`          | Style for the body of your tip.|
+| style             | `ViewStyle`          | Style of the item wrapper component: `<Tip style={style}>`.|
+| activeItemStyle   | `ViewStyle`          | Style for the item when the tip is open.>`.|
+| tipContainerStyle | `ViewStyle`          | Style for the tip. Use carefully, this can mess up the tip's position.|
+| overlayOpacity    | `number`             | Set opacity intensity of overlay. default `0.6`.|
+| renderTip         | `({ titleStyle:TextStyle, bodyStyle:TextStyle }) => React.Component;` | Set a custom component to be rendered inside your tip. You can inject your current tip's global titleStyle and bodyStyle (if you defined one in your `TipProvider`) props direct in your custom tip component with `titleStyle` and `bodyStyle` params.|
+| showItemPulseAnimation | `boolean`       | Show item pulse animation when tip is open.|
+| pulseColor        | `string`             | Set pulse animation color.|
+| pulseStyle        | `ViewStyle`          | Style for the pulse animation.|
+| pulseIntensity    | `number`             | Style for the pulse animation intensity size.|
+| dismissable       | `boolean`            | Allow auto dismiss on touch overlay.|
+| active            | `boolean`  Default = true | If true the item becomes pressable and shows the tip automatically when pressed. OBS: if the item is already a pressable component, you should show or close it manually by using `showTip()`, `closeTip()` help functions.|
+| onPressItem       | `() => void`         | Trigger your custom action on item press.|
+| onTipPress        | `() => void`         | Trigger your custom action on tip press.|
+| onDismiss         | `() => void`         | Override dismiss natural action.|
  
 <br/><br />
 ## TipProvider Props
 
 You can set a default style for all your tips with the following:
 
-| Property               | Type        | Description                                                                                                           |
-| ---------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
-| tipContainerStyle      | `ViewStyle` | Set global style for the tip wrapper                                                                                  |
-| titleStyle             | `TextStyle` | Set global style for the title of your tip                                                                            |
-| bodyStyle              | `TextStyle` | Set global style for the body of your tip.                                                                            |
-| overlayOpacity         | `number`    | Set global opacity intensity of overlay. default `0.6`                                                                |
-| showItemPulseAnimation | `boolean`   | Set global pulse animation on item when tip is open.                                                                  |
-| darkMode               | `boolean`   | When `true` set a dark custom color scheme for your tip. It can be overwritten by `titleStyle` and `bodyStyle` props. |
-| prevButtonLabel        | `string`    | Label for `Prev` action button on tip tour mode.                                                                      |
-| nextButtonLabel        | `string`    | Label for `Next` action button on tip tour mode.                                                                      |
-| closeButtonLabel       | `string`    | Label for `Close` action button on tip tour mode.                                                                     |
-| prevNextButtonStyle    | `ViewStyle` | Style for `Next, Prev, Close` action buttons on tip tour mode.                                                        |
-| prevNextTextStyle      | `TextStyle` | Style for `Next, Prev, Close` action buttons text on tip tour mode.                                                   |
+| Property               | Type        | Description  |
+| ---------------------- | ----------- | --------------------------- |
+| tipContainerStyle      | `ViewStyle` | Set global style for the tip wrapper.|
+| titleStyle             | `TextStyle` | Set global style for the title of your tip.|
+| bodyStyle              | `TextStyle` | Set global style for the body of your tip.|
+| overlayOpacity         | `number`    | Set global opacity intensity of overlay. default `0.6`.|
+| showItemPulseAnimation | `boolean`   | Set global pulse animation on item when tip is open.|
+| pulseColor             | `string`    | Set global pulse animation color.|
+| pulseStyle             | `ViewStyle` | Set global style for the pulse animation.|
+| pulseIntensity         | `number`    | Set global pulse animation intensity size.|
+| darkMode               | `boolean`   | When `true` set a dark custom color scheme for your tip. It can be overwritten by `titleStyle` and `bodyStyle` props.|
+| prevButtonLabel        | `string`    | Label for `Prev` action button on tip tour mode.|
+| nextButtonLabel        | `string`    | Label for `Next` action button on tip tour mode.|
+| closeButtonLabel       | `string`    | Label for `Close` action button on tip tour mode.|
+| prevNextButtonStyle    | `ViewStyle` | Style for `Next, Prev, Close` action buttons on tip tour mode.|
+| prevNextTextStyle      | `TextStyle` | Style for `Next, Prev, Close` action buttons text on tip tour mode.|
  
 <br/><br />
 ## Helper functions
 
-| Property    | Type                                                              | Description                                                                                                                                                                                                                                                   |
-| ----------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Property | Type | Description |
+| -------- | ---- | ----------- |
 | showTip     | `(tipId?: string, delay?: number, props?: Partial<ITip>) => void` | Show your tip, can be called anywhere in your code. * You can show a specific tip by passing its id. * You can delay your tip's appearing by passing a delay number in `milliseconds`, useful to await async tasks live navigate to another screen, default=0 |
-| closeTip    | `()=>void`                                                        | Close the current opened tip, can be called anywhere in your code.                                                                                                                                                                                            |
-| showTipTour | `(steps: ITipStep[])=>void`                                       | Set a tip tour sequence.                                                                                                                                                                                                                                      |
+| closeTip    | `()=>void` | Close the current opened tip, can be called anywhere in your code.|
+| showTipTour | `(steps: ITipStep[])=>void` | Set a tip tour sequence.|
 <br/><br />
 
 ## TipStep Props
