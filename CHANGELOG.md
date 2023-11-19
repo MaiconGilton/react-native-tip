@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.20...v0.0.21) (2023-11-19)
+
+
+### Features
+
+* add pulse animation intensity control ([9153340](https://github.com/MaiconGilton/react-native-tip/commit/915334094a37777465b70124bf7c3742a3ffb17d))
+
+
+### Bug Fixes
+
+* isNaN error when measure item ([5e874a5](https://github.com/MaiconGilton/react-native-tip/commit/5e874a536b0d337db330640412bc3352a5f3c53b))
+
 ### [0.0.20](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.19...v0.0.20) (2023-11-19)
 
 
