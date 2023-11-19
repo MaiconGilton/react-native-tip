@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Animated, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Text, Dimensions, View, Easing, Modal } from 'react-native'
+import { Animated, Dimensions, Easing, Modal, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import TipManager from './TipManager'
-import { getItemCoordinates, getTipPositionProps, ARROW_WIDTH, ARROW_HEIGHT, RENDER_BOUNDARY, clearItemStyles } from './utils'
-
-const { width: screenWidth } = Dimensions.get('window')
+import { ARROW_HEIGHT, ARROW_WIDTH, RENDER_BOUNDARY, clearItemStyles, getItemCoordinates, getTipPositionProps } from './utils'
 
 export default class TipProvider extends Component {
   constructor(props) {
@@ -269,6 +267,7 @@ export default class TipProvider extends Component {
 
     const _tipStyle = {
       ...styles.tip,
+      maxWidth: Dimensions.get('screen').width - RENDER_BOUNDARY * 2,
       ...tipStyle
     }
 
@@ -457,7 +456,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 10,
     padding: 10,
-    maxWidth: screenWidth - RENDER_BOUNDARY * 2,
     minHeight: 40,
     zIndex: 999,
     overflow: 'visible'
