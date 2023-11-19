@@ -73,7 +73,7 @@ export function getTipPositionProps(itemCoords, tipHeight, tipWidth) {
     const shouldInvertTip = tipBottomY > screenHeight
 
     const arrowPosition = {
-        top: -ARROW_HEIGHT,
+    top: -ARROW_HEIGHT + 1,
         left: centerPoint.x - tipPosition.left - ARROW_WIDTH / 2
     }
 
@@ -82,7 +82,7 @@ export function getTipPositionProps(itemCoords, tipHeight, tipWidth) {
 
         // move arrow as well
         delete arrowPosition.top
-        arrowPosition.bottom = -ARROW_HEIGHT
+    arrowPosition.bottom = -ARROW_HEIGHT + 1
         arrowPosition.transform = [{ scaleY: -1 }]
     }
 
