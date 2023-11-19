@@ -28,22 +28,28 @@ export function clearItemStyles(styles) {
 
 export async function getItemCoordinates(target, ignoreStatusBar) {
   const itemCoordinates = new Promise((resolve, reject) => {
-    UIManager.measure(target, (x, y, width, height, px, py) => {
-      py = py + (ignoreStatusBar ? 0 : StatusBar.currentHeight)
+    function measure() {
+      UIManager.measure(target, (x, y, width, height, px, py) => {
+        py = py + (ignoreStatusBar ? 0 : StatusBar.currentHeight)
 
-      const coords = {
-        width,
-        height,
-        px,
-        py,
-        centerPoint: {
-          y: py + height / 2,
-          x: px + width / 2
+        if (isNaN(x)) {
+          setTimeout(measure, 100)
+        } else {
+          const coords = {
+            width,
+            height,
+            px,
+            py,
+            centerPoint: {
+              y: py + height / 2,
+              x: px + width / 2
+            }
+          }
+          resolve(coords)
         }
-      }
-
-      resolve(coords)
-    })
+      })
+    }
+    measure()
   })
 
   return itemCoordinates
