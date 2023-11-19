@@ -35,7 +35,7 @@ export default class TipProvider extends Component {
       this.setState({ tipHasProps: false })
     }
 
-    const itemCoordinates = await getItemCoordinates(tip.target)
+    const itemCoordinates = await getItemCoordinates(tip.target, this.props.statusBarTranslucent)
 
     this.setState({
       ...tip,

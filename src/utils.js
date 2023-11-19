@@ -26,10 +26,10 @@ export function clearItemStyles(styles) {
     }
 }
 
-export async function getItemCoordinates(target) {
+export async function getItemCoordinates(target, ignoreStatusBar) {
     const itemCoordinates = new Promise((resolve, reject) => {
         UIManager.measure(target, (x, y, width, height, px, py) => {
-            py = py + StatusBar.currentHeight
+      py = py + (ignoreStatusBar ? 0 : StatusBar.currentHeight)
 
             const coords = {
                 width,

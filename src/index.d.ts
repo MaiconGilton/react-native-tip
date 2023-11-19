@@ -164,6 +164,10 @@ export interface ITipProvider {
    * Global style for the pulse animation.
    */
   pulseStyle?: ViewStyle;
+  /**
+   * Required, this will help the calculation of the exact position for the tip to rendered 
+   */
+  statusBarTranslucent: boolean;
     /**
      * When `true` set a dark custom color scheme for your tip.
      * 
