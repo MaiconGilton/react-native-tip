@@ -103,6 +103,10 @@ export interface ITip {
      * Set pulse animation color.
      */
     pulseColor?: string;
+  /**
+   * Style for the pulse animation.
+   */
+  pulseStyle?: ViewStyle;
     /**
      * Allow auto dismiss on touch overlay.
      */
