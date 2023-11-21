@@ -191,7 +191,7 @@ export default class TipProvider extends Component {
     } = this.state
 
     let top = 0
-    if (pulseStyle.height) {
+    if (pulseStyle?.height) {
       top = (coordinates.height - pulseStyle.height) / 2
     }
 
