@@ -292,6 +292,16 @@ export default class TipProvider extends Component {
           ...this.getTipAnimation()
         }}
       >
+        {/* Tip leg border */}
+        <View style={{
+          ...styles.arrow,
+          ...arrowPosition,
+          top: arrowPosition?.top ? arrowPosition?.top - (tipStyle.borderWidth + 1 || 0) : undefined,
+          bottom: arrowPosition?.bottom ? arrowPosition?.bottom - (tipStyle.borderWidth + 1 || 0) : undefined,
+          borderBottomColor: tipStyle.borderColor,
+          borderTopColor: tipStyle.borderColor,
+        }} />
+
         {/* Tip leg */}
         <View style={{
           ...styles.arrow,
