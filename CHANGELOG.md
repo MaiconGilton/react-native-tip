@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.23](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.22...v0.0.23) (2023-11-22)
+
+
+### Features
+
+* apply tip's leg border accordingly the tip's container ([9450084](https://github.com/MaiconGilton/react-native-tip/commit/9450084445a33e4a44cfafb53c526420d999c550))
+
 ### [0.0.22](https://github.com/MaiconGilton/react-native-tip/compare/v0.0.21...v0.0.22) (2023-11-21)
 
 
