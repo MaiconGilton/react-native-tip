@@ -106,6 +106,7 @@ class TipManager {
                     this.tipProvider.showTip(tip)
                 }, stepTourProps.delay || 10)
             } else {
+                const tip = getTip(id)
                 this.tipProvider.showTip(tip)
             }
         }
