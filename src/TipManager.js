@@ -93,31 +93,28 @@ class TipManager {
                 ? stepTourProps.prevId
                 : stepTourProps.nextId
 
-            let tip = this.tips.find(i => i.id === id)
-
-            if (!tip) {
-                if (tries > 10) {
-                    return alert('Timeout! Tip id not found after 10 tries (2500ms)! Verify if the item is registered by the time you are calling it.')
-                }
-
-                tries++
-                return setTimeout(showItem, 250)
-            }
-
-            tip.tourProps = this.steps.find(i => i.id === id)
-            tip = { ...tip, ...tip.tourProps.tipProps }
-
             if (direction === 'prev' && stepTourProps.prevAction) {
                 stepTourProps.prevAction()
-                setTimeout(() => this.tipProvider.showTip(tip), stepTourProps.delay || 10)
-                return
+                setTimeout(() => {
+                    const tip = getTip(id)
+                    this.tipProvider.showTip(tip)
+                }, stepTourProps.delay || 10)
             } else if (direction === 'next' && stepTourProps.nextAction) {
                 stepTourProps.nextAction()
-                setTimeout(() => this.tipProvider.showTip(tip), stepTourProps.delay || 10)
-                return
+                setTimeout(() => {
+                    const tip = getTip(id)
+                    this.tipProvider.showTip(tip)
+                }, stepTourProps.delay || 10)
+            } else {
+                this.tipProvider.showTip(tip)
             }
+        }
 
-            this.tipProvider.showTip(tip)
+        const getTip = (id) => {
+            let tip = this.tips.find(i => i.id === id)
+            tip.tourProps = this.steps.find(i => i.id === id)
+            tip = { ...tip, ...tip.tourProps.tipProps }
+            return tip
         }
 
         setTimeout(showItem, 0)
