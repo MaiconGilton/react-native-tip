@@ -430,6 +430,7 @@ export default class TipProvider extends Component {
         })}
 
         <TouchableOpacity
+          style={{ width: "100%", height: "100%" }}
           onPress={() => {
             if (onPressItem) onPressItem()
             else this.closeTip()
@@ -468,7 +469,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     minHeight: 40,
-    zIndex: 999,
+    zIndex: 999999,
     overflow: 'visible'
   },
   arrow: {
